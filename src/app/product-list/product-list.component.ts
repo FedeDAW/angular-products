@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Product } from '../interfaces/product';
 
 @Component({
@@ -8,12 +8,12 @@ import { Product } from '../interfaces/product';
 })
 
 export class ProductListComponent implements OnInit {
-  showImage = true;
+  @Output() showImage = true;
   filterSearch=""; // podreiamos poner un valor por defecto
   title = 'Mi lista de productos';
-  headers = {description: 'Producto', price: 'Precio', available: 'Disponible', imageUrl:'Imagen'};
+  headers = {description: 'Producto', price: 'Precio', available: 'Disponible', imageUrl:'Imagen', rating: 'Puntuación'};
 
-  products: Product[] = [{
+  @Output() products: Product[] = [{
     id: 1,
     description: 'SSD hard drive',
     available: '2016-10-03',
