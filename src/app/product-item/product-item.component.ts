@@ -10,6 +10,10 @@ export class ProductItemComponent implements OnInit {
   @Input() products!: Product;
   @Input() showImage!: boolean;
 
+  changeRating(rating: number) {
+    this.products.rating = rating;
+  }
+
   constructor() {}
   ngOnInit() {}
 }

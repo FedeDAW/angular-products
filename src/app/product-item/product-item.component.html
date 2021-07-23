@@ -11,6 +11,5 @@
 <div class="col">{{ products.price | currency: "EUR":"symbol" }}</div>
 <div class="col">{{ products.available | date:'dd/MM/y' }}</div>
 <div class="col">
-<!--  (ratingChanged)="changeRating($event)" -->
-  <star-rating [rating]="products.rating"></star-rating>
+  <star-rating [rating]="products.rating" (ratingChanged)="changeRating($event)"></star-rating>
 </div>
